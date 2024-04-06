@@ -77,31 +77,6 @@ Discarded input sections
                 0x00000000       0x1e ./Drivers/Src/stm32f446xx_gpio_driver.o
  .text.GPIO_IRQHandling
                 0x00000000       0x16 ./Drivers/Src/stm32f446xx_gpio_driver.o
-<<<<<<< HEAD
- .debug_info    0x00000000      0x5ff ./Drivers/Src/stm32f446xx_gpio_driver.o
- .debug_abbrev  0x00000000      0x143 ./Drivers/Src/stm32f446xx_gpio_driver.o
- .debug_aranges
-                0x00000000       0x68 ./Drivers/Src/stm32f446xx_gpio_driver.o
- .debug_rnglists
-                0x00000000       0x4c ./Drivers/Src/stm32f446xx_gpio_driver.o
- .debug_macro   0x00000000       0x86 ./Drivers/Src/stm32f446xx_gpio_driver.o
- .debug_macro   0x00000000      0xac0 ./Drivers/Src/stm32f446xx_gpio_driver.o
- .debug_macro   0x00000000       0x22 ./Drivers/Src/stm32f446xx_gpio_driver.o
- .debug_macro   0x00000000       0x8e ./Drivers/Src/stm32f446xx_gpio_driver.o
- .debug_macro   0x00000000       0x51 ./Drivers/Src/stm32f446xx_gpio_driver.o
- .debug_macro   0x00000000      0x103 ./Drivers/Src/stm32f446xx_gpio_driver.o
- .debug_macro   0x00000000       0x6a ./Drivers/Src/stm32f446xx_gpio_driver.o
- .debug_macro   0x00000000      0x1df ./Drivers/Src/stm32f446xx_gpio_driver.o
- .debug_macro   0x00000000      0x2e3 ./Drivers/Src/stm32f446xx_gpio_driver.o
- .debug_macro   0x00000000       0xb2 ./Drivers/Src/stm32f446xx_gpio_driver.o
- .debug_line    0x00000000      0x7bd ./Drivers/Src/stm32f446xx_gpio_driver.o
- .debug_str     0x00000000     0x5319 ./Drivers/Src/stm32f446xx_gpio_driver.o
- .comment       0x00000000       0x44 ./Drivers/Src/stm32f446xx_gpio_driver.o
- .debug_frame   0x00000000      0x1a0 ./Drivers/Src/stm32f446xx_gpio_driver.o
- .ARM.attributes
-                0x00000000       0x34 ./Drivers/Src/stm32f446xx_gpio_driver.o
-=======
->>>>>>> feature/GPIO_NormalMode
  .group         0x00000000        0xc ./Src/main.o
  .group         0x00000000        0xc ./Src/main.o
  .group         0x00000000        0xc ./Src/main.o
@@ -891,7 +866,7 @@ LOAD C:/ST/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_rnglists
                 0x00000065       0x19 ./Startup/startup_stm32f446retx.o
 
-.debug_macro    0x00000000     0x137a
+.debug_macro    0x00000000     0x13ba
  .debug_macro   0x00000000       0x86 ./Drivers/Src/stm32f446xx_gpio_driver.o
  .debug_macro   0x00000086      0xac0 ./Drivers/Src/stm32f446xx_gpio_driver.o
  .debug_macro   0x00000b46       0x22 ./Drivers/Src/stm32f446xx_gpio_driver.o
@@ -900,28 +875,21 @@ LOAD C:/ST/STM32CubeIDE_1.11.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_macro   0x00000c47      0x103 ./Drivers/Src/stm32f446xx_gpio_driver.o
  .debug_macro   0x00000d4a       0x6a ./Drivers/Src/stm32f446xx_gpio_driver.o
  .debug_macro   0x00000db4      0x1df ./Drivers/Src/stm32f446xx_gpio_driver.o
- .debug_macro   0x00000f93      0x2a3 ./Drivers/Src/stm32f446xx_gpio_driver.o
- .debug_macro   0x00001236       0xb2 ./Drivers/Src/stm32f446xx_gpio_driver.o
- .debug_macro   0x000012e8       0x92 ./Src/main.o
+ .debug_macro   0x00000f93      0x2e3 ./Drivers/Src/stm32f446xx_gpio_driver.o
+ .debug_macro   0x00001276       0xb2 ./Drivers/Src/stm32f446xx_gpio_driver.o
+ .debug_macro   0x00001328       0x92 ./Src/main.o
 
 .debug_line     0x00000000      0xcfb
  .debug_line    0x00000000      0x7bd ./Drivers/Src/stm32f446xx_gpio_driver.o
  .debug_line    0x000007bd      0x4c3 ./Src/main.o
  .debug_line    0x00000c80       0x7b ./Startup/startup_stm32f446retx.o
 
-<<<<<<< HEAD
-.debug_str      0x00000000     0x4eb7
- .debug_str     0x00000000     0x4e78 ./Src/main.o
-                               0x4fd3 (size before relaxing)
- .debug_str     0x00004e78       0x3f ./Startup/startup_stm32f446retx.o
-=======
-.debug_str      0x00000000     0x508b
- .debug_str     0x00000000     0x500d ./Drivers/Src/stm32f446xx_gpio_driver.o
-                               0x5191 (size before relaxing)
- .debug_str     0x0000500d       0x3f ./Src/main.o
-                               0x4fb7 (size before relaxing)
- .debug_str     0x0000504c       0x3f ./Startup/startup_stm32f446retx.o
->>>>>>> feature/GPIO_NormalMode
+.debug_str      0x00000000     0x5213
+ .debug_str     0x00000000     0x5195 ./Drivers/Src/stm32f446xx_gpio_driver.o
+                               0x5319 (size before relaxing)
+ .debug_str     0x00005195       0x3f ./Src/main.o
+                               0x513f (size before relaxing)
+ .debug_str     0x000051d4       0x3f ./Startup/startup_stm32f446retx.o
                                  0x69 (size before relaxing)
 
 .comment        0x00000000       0x43

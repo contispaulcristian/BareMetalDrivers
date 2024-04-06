@@ -29,6 +29,7 @@ void delay(void);
 
 int main(void)
 {
+	/* This section is only for testing functionality of drivers */
 	GPIO_Handle_t GpioLed;
 	GPIO_Handle_t GpioBtn;
 
