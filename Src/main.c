@@ -2,7 +2,7 @@
  ******************************************************************************
  * @file           : main.c
  * @author         : Paul Contis
- * @brief          : Main program body
+ * @brief          : Main program body - Release V1.0
  ******************************************************************************
  * @attention
  *
@@ -29,6 +29,7 @@ void delay(void);
 
 int main(void)
 {
+	/* This section is designated for testing driver functionality in non-interrupt mode. */
 	GPIO_Handle_t GpioLed;
 	GPIO_Handle_t GpioBtn;
 

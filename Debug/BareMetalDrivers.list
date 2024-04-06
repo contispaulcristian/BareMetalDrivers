@@ -35,27 +35,17 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  15 .debug_rnglists 0000007e  00000000  00000000  00002318  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_macro  0000137a  00000000  00000000  00002396  2**0
+ 16 .debug_macro  000013ba  00000000  00000000  00002396  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   00000cfb  00000000  00000000  00003710  2**0
+ 17 .debug_line   00000cfb  00000000  00000000  00003750  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
-<<<<<<< HEAD
- 18 .debug_str    00004eb7  00000000  00000000  00001a00  2**0
+ 18 .debug_str    00005213  00000000  00000000  0000444b  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000043  00000000  00000000  000068b7  2**0
+ 19 .comment      00000043  00000000  00000000  0000965e  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00000054  00000000  00000000  000068fc  2**2
+ 20 .debug_frame  00000224  00000000  00000000  000096a4  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 0000004d  00000000  00000000  00006950  2**0
-=======
- 18 .debug_str    0000508b  00000000  00000000  0000440b  2**0
-                  CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000043  00000000  00000000  00009496  2**0
-                  CONTENTS, READONLY
- 20 .debug_frame  00000224  00000000  00000000  000094dc  2**2
-                  CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 0000004d  00000000  00000000  00009700  2**0
->>>>>>> feature/GPIO_NormalMode
+ 21 .debug_line_str 0000004d  00000000  00000000  000098c8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -643,6 +633,7 @@ int main(void)
  800058c:	b580      	push	{r7, lr}
  800058e:	b086      	sub	sp, #24
  8000590:	af00      	add	r7, sp, #0
+	/* This section is only for testing functionality of drivers */
 	GPIO_Handle_t GpioLed;
 	GPIO_Handle_t GpioBtn;
 
