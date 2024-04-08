@@ -157,7 +157,7 @@ void GPIO_Init(GPIO_Handle_t *pGPIOHandle)
 	temp = ( pGPIOHandle->GPIO_PinConfig.GPIO_PinPuPdControl<< (2 *pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber) );
 	pGPIOHandle->pGPIOx->PUPDR &= ~( 0x3 << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);
 	pGPIOHandle->pGPIOx->PUPDR |= temp;
-	/* configure the optype*/
+	/* configure the optype*/ //TODO: configure only in output mode
 	temp = 0;
 	temp = ( pGPIOHandle->GPIO_PinConfig.GPIO_PinOPType<< (2 *pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber) );
 	pGPIOHandle->pGPIOx->OTYPER &= ~( 0x3 << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);
@@ -322,7 +322,7 @@ void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber)
 void GPIO_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi)
 {
 	/* processor side NVIC*/
-	if(EnorDi == DISABLE)
+	if(EnorDi == ENABLE)
 	{
 		if( IRQNumber <= 31 )
 		{
