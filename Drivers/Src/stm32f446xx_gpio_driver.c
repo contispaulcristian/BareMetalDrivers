@@ -322,7 +322,7 @@ void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber)
 void GPIO_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi)
 {
 	/* processor side NVIC*/
-	if(EnorDi == DISABLE)
+	if(EnorDi == ENABLE)
 	{
 		if( IRQNumber <= 31 )
 		{
