@@ -199,6 +199,23 @@ typedef struct
 	__vo uint32_t SWIER;					/*!<Software interrupt event register, 						        			Address offset: 0x10 */
 	__vo uint32_t PR;					    /*!<Pending register,                      							    		Address offset: 0x14 */
 }EXTI_RegDef_t;
+
+/*
+ * peripheral register definition structure for SPI
+ */
+typedef struct
+{
+	__vo uint32_t CR1;						/*!<SPI control register 1 (SPI_CR1) (not used in I2S mode),					Address offset: 0x00 */
+	__vo uint32_t CR2;						/*!<SPI control register 2 (SPI_CR2),											Address offset: 0x04 */
+	__vo uint32_t SR;						/*!<SPI status register (SPI_SR),												Address offset: 0x08 */
+	__vo uint32_t DR;						/*!<SPI data register (SPI_DR),													Address offset: 0x0C */
+	__vo uint32_t CRCPR;					/*!<SPI CRC polynomial register (SPI_CRCPR) (not used in I2S mode),				Address offset: 0x10 */
+	__vo uint32_t RXCRCR; 					/*!<SPI RX CRC register (SPI_RXCRCR) (not used in I2S mode),					Address offset: 0x14 */
+	__vo uint32_t TXCRCR;  					/*!<SPI TX CRC register (SPI_TXCRCR) (not used in I2S mode),					Address offset: 0x18 */
+	__vo uint32_t I2SCFGR;					/*!<SPI_I2S configuration register (SPI_I2SCFGR),								Address offset: 0x1C */
+	__vo uint32_t I2SPR;					/*!<SPI_I2S prescaler register (SPI_I2SPR),										Address offset: 0x20 */
+
+}SPI_RegDef_t;
 /*
  * Peripheral register definition structure for SYSCFG
  */
@@ -217,17 +234,23 @@ typedef struct
 /*
  * peripheral definitions ( Peripheral base addresses typecasted to xxx_RegDef_t )
  */
-#define GPIOA	((GPIO_RegDef_t*)GPIOA_BASEADDR)
-#define GPIOB	((GPIO_RegDef_t*)GPIOB_BASEADDR)
-#define GPIOC	((GPIO_RegDef_t*)GPIOC_BASEADDR)
-#define GPIOD	((GPIO_RegDef_t*)GPIOD_BASEADDR)
-#define GPIOE	((GPIO_RegDef_t*)GPIOE_BASEADDR)
-#define GPIOF	((GPIO_RegDef_t*)GPIOF_BASEADDR)
-#define GPIOG	((GPIO_RegDef_t*)GPIOG_BASEADDR)
-#define GPIOH	((GPIO_RegDef_t*)GPIOH_BASEADDR)
-#define RCC		((RCC_RegDef_t*)RCC_BASEADDR)
-#define EXTI	((EXTI_RegDef_t*)EXTI_BASEADDR)
-#define SYSCFG	((SYSCFG_RegDef_t*)SYSCFG_BASEADDR)
+#define GPIOA					((GPIO_RegDef_t*)GPIOA_BASEADDR)
+#define GPIOB					((GPIO_RegDef_t*)GPIOB_BASEADDR)
+#define GPIOC					((GPIO_RegDef_t*)GPIOC_BASEADDR)
+#define GPIOD					((GPIO_RegDef_t*)GPIOD_BASEADDR)
+#define GPIOE					((GPIO_RegDef_t*)GPIOE_BASEADDR)
+#define GPIOF					((GPIO_RegDef_t*)GPIOF_BASEADDR)
+#define GPIOG					((GPIO_RegDef_t*)GPIOG_BASEADDR)
+#define GPIOH					((GPIO_RegDef_t*)GPIOH_BASEADDR)
+
+#define RCC						((RCC_RegDef_t*)RCC_BASEADDR)
+#define EXTI					((EXTI_RegDef_t*)EXTI_BASEADDR)
+#define SYSCFG					((SYSCFG_RegDef_t*)SYSCFG_BASEADDR)
+
+#define SPI1					((SPI_RegDef_t*)SPI1_BASEADDR)
+#define SPI2					((SPI_RegDef_t*)SPI2_BASEADDR)
+#define SPI3					((SPI_RegDef_t*)SPI3_BASEADDR)
+#define SPI4					((SPI_RegDef_t*)SPI4_BASEADDR)
 /*************************************************************************************************************************************************/
 /************************************************************** Clock Enable Macros **************************************************************/
 /*************************************************************************************************************************************************/
@@ -250,6 +273,9 @@ typedef struct
  * Clock Enable MAcros for SPIx peripherals
  */
 #define SPI1_PCLK_EN()			( RCC->APB2ENR |= ( 1 << 12 ) )
+#define SPI2_PCLK_EN()			( RCC->APB1ENR |= ( 1 << 14 ) )
+#define SPI3_PCLK_EN()			( RCC->APB1ENR |= ( 1 << 15 ) )
+#define SPI4_PCLK_EN()			( RCC->APB2ENR |= ( 1 << 13 ) )
 /*
  * Clock Enable MAcros for USARTx peripherals
  */
