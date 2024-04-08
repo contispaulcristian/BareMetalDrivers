@@ -65,14 +65,6 @@ int main(void)
 
     /* Loop forever */
 	while(1);
-		/*{
-		;
-			if((GPIO_ReadFromInputPin(GPIOC, GPIO_PIN_NO_13)) == BTN_PRESSED)
-		{
-			delay();
-			GPIO_ToggleOutputPin(GPIOA, GPIO_PIN_NO_5);
-		}
-	}*/
 
 	return 0;
 }
