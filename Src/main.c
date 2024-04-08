@@ -2,7 +2,7 @@
  ******************************************************************************
  * @file           : main.c
  * @author         : Paul Contis
- * @brief          : Main program body - Release V1.0
+ * @brief          : Main program body   V1.1
  ******************************************************************************
  * @attention
  *
@@ -17,6 +17,7 @@
  */
 
 #include "stm32f446xx.h"
+#include "string.h"
 
 /*************************************************************************************************************************************************/
 #define LOW				0
@@ -29,9 +30,13 @@ void delay(void);
 
 int main(void)
 {
-	/* This section is designated for testing driver functionality in non-interrupt mode. */
+	/* This section is allocated for testing the driver functionality using interrupt mode. */
 	GPIO_Handle_t GpioLed;
 	GPIO_Handle_t GpioBtn;
+
+	/* initialize structures */
+	memset(&GpioLed,0,sizeof(GpioLed));
+	memset(&GpioBtn,0,sizeof(GpioBtn));
 
 	/* led gpio configuration */
 	GpioLed.pGPIOx = GPIOA;
@@ -47,23 +52,27 @@ int main(void)
 	/* button gpio configuration */
 	GpioBtn.pGPIOx = GPIOC;
 	GpioBtn.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_13;
-	GpioBtn.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_IN;
+	GpioBtn.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_IT_FT;
 	GpioBtn.GPIO_PinConfig.GPIO_PinSpeed = GPIO_SPEED_FAST;
-	GpioBtn.GPIO_PinConfig.GPIO_PinPuPdControl = GPIO_NO_PUPD;
+	GpioBtn.GPIO_PinConfig.GPIO_PinPuPdControl = GPIO_PIN_PD;
 
-		GPIO_PeriClockControl(GPIOC, ENABLE);
-		GPIO_Init(&GpioBtn);
+	GPIO_PeriClockControl(GPIOC, ENABLE);
+	GPIO_Init(&GpioBtn);
+
+	/* IRQ configurations */
+	GPIO_IRQPriorityConfig(IRQ_NO_EXTI15_10, NVIC_IRQ_PRI15);
+	GPIO_IRQInterruptConfig(IRQ_NO_EXTI15_10, ENABLE);
 
     /* Loop forever */
-	while(1)
-	{
+	while(1);
+		/*{
 		;
-		if((GPIO_ReadFromInputPin(GPIOC, GPIO_PIN_NO_13)) == BTN_PRESSED)
+			if((GPIO_ReadFromInputPin(GPIOC, GPIO_PIN_NO_13)) == BTN_PRESSED)
 		{
 			delay();
 			GPIO_ToggleOutputPin(GPIOA, GPIO_PIN_NO_5);
 		}
-	}
+	}*/
 
 	return 0;
 }
@@ -71,9 +80,16 @@ int main(void)
 
 void delay(void)
 {
-	for(uint32_t count = 0 ; count < 500000; count++);
+	for(uint32_t count = 0 ; count < 500000/2; count++);
 }
 
 /*************************************************************************************************************************************************/
 
+void EXTI15_10_IRQHandler(void)
+{
+	delay();
+	/* handle the interrupt */
+	GPIO_IRQHandling(GPIO_PIN_NO_13);
+	GPIO_ToggleOutputPin(GPIOA, GPIO_PIN_NO_5);
+}
 
