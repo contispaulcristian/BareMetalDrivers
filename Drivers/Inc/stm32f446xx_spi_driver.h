@@ -16,13 +16,15 @@
  */
 typedef struct
 {
-	uint8_t SPI_DeviceMode;
-	uint8_t SPI_BusConfig;
-	uint8_t	SPI_SclkSpeed;
-	uint8_t SPI_DFF;
-	uint8_t SPI_CPOL;
-	uint8_t	SPI_CPHA;
-	uint8_t	SPI_SSM;
+	uint8_t SPI_DeviceMode;					/*!< Master or slave																				 */
+	uint8_t SPI_BusConfig;					/*!< full duplex, half duplex, simplex																 */
+	uint8_t	SPI_SclkSpeed;					/*!< 																								 */
+	uint8_t SPI_DFF;						/*!< Data frame format: 8 bits or 16 bits															 */
+	uint8_t SPI_CPOL;						/*!< Clock polarity: CPOL 0 - default state LOW;
+										   	   	   	   	   	   	 CPOL 1 - default state HIGH 													 */
+	uint8_t	SPI_CPHA;						/*!< Clock phase: CPHA 0 - the first edge on the SCK pin captures the first data bit transacted
+	 	 	 	 	 	 	 	 	 	 	                  CPHA 1 - the second edge on the SCK pin captures the first data bit transacted     */
+	uint8_t	SPI_SSM;						/*!< Slave select management: software or hardware													 */
 }SPI_Config_t;
 
 /*
@@ -31,8 +33,59 @@ typedef struct
 typedef struct
 {
 	SPI_RegDef_t *pSPIx;					/*!<This holds the base address of SPIx peripheral													 */
-	SPI_Config_t SPIConfig;
+	SPI_Config_t SPI_Config;
 }SPI_Handle_t;
+
+/*
+ * @SPI_DeviceMode macros
+ */
+#define SPI_DEVICE_MODE_MASTER				1	/* CR1 register - bit 2 */
+#define SPI_DEVICE_MODE_SLAVE				0	/* default mode */
+
+/*
+ * @SPI_BusConfig
+ */
+#define SPI_BUS_CONFIG_FD					1	/* Ful duplex: CR1 register - bit 15 LOW unidirectional mode, bit 10 should be LOW */
+#define SPI_BUS_CONFIG_HD					2	/* Half duplex: CR1 register - bit 15 HIGH bidirectional mode, bit 10 should be LOW
+ 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	   bit 14 LOW receive only, HIGH transmit only */
+#define SPI_BUS_CONFIG_SIMPLEX_RXONLY		3	/* Simplex Rx only: CR1 register - bit 10 LOW transmit and receive
+ 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	   bit 10 HIGH receive only, bit 15 should be LOW */
+
+/*
+ * @SPI_SclkSpeed
+ */
+#define SPI_SCLCK_SPEED_DIV2 				0  /* Baud rate control: CR1 register - bit 3,4,5  */
+#define SPI_SCLCK_SPEED_DIV4				1
+#define SPI_SCLCK_SPEED_DIV8				2
+#define SPI_SCLCK_SPEED_DIV16				3
+#define SPI_SCLCK_SPEED_DIV32				4
+#define SPI_SCLCK_SPEED_DIV64				5
+#define SPI_SCLCK_SPEED_DIV128				6
+#define SPI_SCLCK_SPEED_DIV256				7
+
+/*
+ * @SPI_DFF
+ */
+#define SPI_DFF_8BITS						0	/* CR1 register - bit 11 */
+#define SPI_DFF_16BITS						1
+
+/*
+ * @SPI_CPOL
+ */
+#define SPI_CPOL_HIGH						1	/* CR1 register - bit 1 */
+#define SPI_CPOL_LOW						0
+
+/*
+ * @SPI_CPHA
+ */
+#define SPI_CPHA_HIGH						1	/* CR1 register - bit 0 */
+#define SPI_CPHA_LOW						0
+
+/*
+ * @SPI_SSM
+ */
+#define SPI_SSM_EN							1	/* CR1 register - bit 9 */
+#define SPI_SSM_DI							0   /* default state */
 
 /*************************************************************************************************************************************************
  *					                 						APIs supported by this driver
