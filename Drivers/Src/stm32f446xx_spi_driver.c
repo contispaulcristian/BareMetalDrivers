@@ -18,29 +18,93 @@
  *
  * @note						- none
  *************************************************************************************************************************************************/
-void SPI_PeriClockControl(GPIO_RegDef_t *pSPIx, uint8_t EnorDi)
+void SPI_PeriClockControl (SPI_RegDef_t *pSPIx, uint8_t EnorDi)
 {
+	if (EnorDi == ENABLE)
+    {
+		if (pSPIx == SPI1)
+		{
+			SPI1_PCLK_EN();
+		}
+		else if (pSPIx == SPI2)
+		{
+			SPI2_PCLK_EN();
+		}
+		else if (pSPIx == SPI3)
+		{
+			SPI3_PCLK_EN();
+		}
+		else if (pSPIx == SPI4)
+		{
+			SPI4_PCLK_EN();
+		}
+
+    }
+	else
+    {
+		if (pSPIx == SPI1)
+		{
+			SPI1_PCLK_DI();
+		}
+		else if (pSPIx == SPI2)
+		{
+			SPI2_PCLK_DI();
+		}
+		else if (pSPIx == SPI3)
+		{
+			SPI3_PCLK_DI();
+		}
+		else if (pSPIx == SPI4)
+		{
+			SPI4_PCLK_DI();
+		}
+    }
+}
+
+/**************************************************************************************************************************************************
+ * @fn 							- SPI_Init
+ * @brief 						- Init
+ *
+ * @param pSPIHandle			-
+ *
+ * @return						- none
+ *
+ * @note						- none
+ *************************************************************************************************************************************************/
+void SPI_Init (SPI_Handle_t *pSPIHandle)
+{
+
 
 }
-/**
- * @fn void SPI_Init(SPI_Handle_t*)
- * @brief
- *
- * @param pSPIHandle
- */
-void SPI_Init(SPI_Handle_t *pSPIHandle)
-{
 
-}
-/**
- * @fn void SPI_DeInit(SPI_RegDef_t*)
- * @brief
+/**************************************************************************************************************************************************
+ * @fn 							- SPI_DeInit
+ * @brief 						- De-init
  *
- * @param pSPIx
- */
-void SPI_DeInit(SPI_RegDef_t *pSPIx)
+ * @param pSPIx					-
+ *
+ * @return						- none
+ *
+ * @note						- none
+ *************************************************************************************************************************************************/
+void SPI_DeInit (SPI_RegDef_t *pSPIx)
 {
-
+	if (pSPIx == SPI1)
+    {
+        SPI1_REG_RESET();
+    }
+    else if (pSPIx == SPI2)
+    {
+        SPI2_REG_RESET();
+    }
+    else if (pSPIx == SPI3)
+    {
+    	SPI3_REG_RESET();
+    }
+    else if (pSPIx == SPI4)
+    {
+        SPI4_REG_RESET();
+    }
 }
 /**
  * @fn void SPI_SendData(SPI_RegDef_t*, uint8_t*, uint32_t)
@@ -50,11 +114,11 @@ void SPI_DeInit(SPI_RegDef_t *pSPIx)
  * @param pTxBuffer
  * @param Length
  */
-void SPI_SendData(SPI_RegDef_t *pSPIx, uint8_t *pTxBuffer, uint32_t Length)
+void SPI_SendData (SPI_RegDef_t *pSPIx, uint8_t *pTxBuffer, uint32_t Length)
 {
 
 }
-void SPI_ReceiveData(SPI_RegDef_t *pSPIx, uint8_t *pRxBuffer, uint32_t Length)
+void SPI_ReceiveData (SPI_RegDef_t *pSPIx, uint8_t *pRxBuffer, uint32_t Length)
 {
 
 }
@@ -65,7 +129,7 @@ void SPI_ReceiveData(SPI_RegDef_t *pSPIx, uint8_t *pRxBuffer, uint32_t Length)
  * @param IRQNumber
  * @param EnorDi
  */
-void SPI_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi)
+void SPI_IRQInterruptConfig (uint8_t IRQNumber, uint8_t EnorDi)
 {
 
 }
@@ -76,7 +140,7 @@ void SPI_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi)
  * @param IRQNumber
  * @param IRQPriority
  */
-void SPI_IRQPriorityConfig(uint8_t IRQNumber, uint32_t IRQPriority)
+void SPI_IRQPriorityConfig (uint8_t IRQNumber, uint32_t IRQPriority)
 {
 
 }
@@ -86,9 +150,8 @@ void SPI_IRQPriorityConfig(uint8_t IRQNumber, uint32_t IRQPriority)
  *
  * @param pHandle
  */
-void SPI_IRQHandling(uint8_t *pHandle)
+void SPI_IRQHandling (uint8_t *pHandle)
 {
 
 }
-
 

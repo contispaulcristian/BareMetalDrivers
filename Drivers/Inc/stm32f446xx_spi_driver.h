@@ -10,6 +10,7 @@
 
 /*************************************************************************************************************************************************/
 #include "stm32f446xx.h"
+
 /*
  * Configuration structure for SPIx peripheral
  */
@@ -29,7 +30,7 @@ typedef struct
  */
 typedef struct
 {
-	SPI_RegDef_t *pSPIx;				/*!<This holds the base address of SPIx peripheral					*/
+	SPI_RegDef_t *pSPIx;					/*!<This holds the base address of SPIx peripheral													 */
 	SPI_Config_t SPIConfig;
 }SPI_Handle_t;
 
@@ -40,7 +41,7 @@ typedef struct
 /*
  * Peripheral Clock setup
  */
-void SPI_PeriClockControl(GPIO_RegDef_t *pSPIx, uint8_t EnorDi);
+void SPI_PeriClockControl(SPI_RegDef_t *pSPIx, uint8_t EnorDi);
 
 /*
  * Init and De-init
