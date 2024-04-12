@@ -59,7 +59,6 @@ typedef struct
 #define GPIO_MODE_OUT 						1
 #define GPIO_MODE_ALTFN 					2
 #define GPIO_MODE_ANALOG 					3
-/* TODO */
 #define GPIO_MODE_IT_FT						4
 #define GPIO_MODE_IT_RT						5
 #define GPIO_MODE_IT_RFT					6
@@ -85,8 +84,8 @@ typedef struct
 #define	GPIO_OP_TYPE_PP						0	/*!< GPIO output type push-pull 							 									 */
 #define GPIO_OP_TYPE_OD						1	/*!< GPIO output type open-drain                         										 */
 /*************************************************************************************************************************************************
- *					                 APIs supported by this driver
- *					For more information about the APIs check the function definitions
+ *					                 							APIs supported by this driver
+ *											For more information about the APIs check the function definitions
  *************************************************************************************************************************************************/
 /*
  * Peripheral Clock setup
