@@ -64,7 +64,7 @@ int main(void)
 		/* send data */
 		SPI_SendData(SPI2, (uint8_t*)user_data, strlen(user_data));
 
-		while ( SPI_GetFlagStatus(SPI2, SPI_BUSY_FLAG) );
+		while( SPI_GetFlagStatus(SPI2, SPI_BUSY_FLAG) );
 
 		/* disable the SPI2 peripheral */
 		SPI_PeripheralControl(SPI2, DISABLE);
