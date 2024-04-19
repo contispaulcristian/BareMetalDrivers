@@ -106,7 +106,7 @@ Discarded input sections
  .text.SPI_IRQHandling
                 0x00000000       0x14 ./Drivers/Src/stm32f446xx_spi_driver.o
  .text.SPI_GetFlagStatus
-                0x00000000       0x26 ./Drivers/Src/stm32f446xx_spi_driver.o
+                0x00000000       0x28 ./Drivers/Src/stm32f446xx_spi_driver.o
  .text.SPI_PeripheralControl
                 0x00000000       0x38 ./Drivers/Src/stm32f446xx_spi_driver.o
  .text.SPI_SSIConfig
@@ -130,7 +130,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x4d7 ./Drivers/Src/stm32f446xx_spi_driver.o
  .debug_macro   0x00000000       0xc4 ./Drivers/Src/stm32f446xx_spi_driver.o
  .debug_macro   0x00000000       0x94 ./Drivers/Src/stm32f446xx_spi_driver.o
- .debug_line    0x00000000      0x717 ./Drivers/Src/stm32f446xx_spi_driver.o
+ .debug_line    0x00000000      0x71a ./Drivers/Src/stm32f446xx_spi_driver.o
  .debug_str     0x00000000     0x5d3d ./Drivers/Src/stm32f446xx_spi_driver.o
  .comment       0x00000000       0x44 ./Drivers/Src/stm32f446xx_spi_driver.o
  .debug_frame   0x00000000      0x1e4 ./Drivers/Src/stm32f446xx_spi_driver.o
