@@ -283,7 +283,7 @@ void SPI_IRQHandling (uint8_t *pHandle)
  *************************************************************************************************************************************************/
 uint8_t SPI_GetFlagStatus(SPI_RegDef_t *pSPIx, uint32_t FlagName)
 {
-	if( pSPIx->SR == FlagName)
+	if( pSPIx->SR & FlagName)
 	{
 		return FLAG_SET;
 	}
