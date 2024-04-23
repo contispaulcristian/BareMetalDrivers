@@ -3,10 +3,10 @@
 ../Drivers/Src/stm32f446xx_spi_driver.c:128:6:SPI_DeInit	5
 ../Drivers/Src/stm32f446xx_spi_driver.c:160:6:SPI_SendData	4
 ../Drivers/Src/stm32f446xx_spi_driver.c:199:6:SPI_ReceiveData	4
-../Drivers/Src/stm32f446xx_spi_driver.c:236:6:SPI_IRQInterruptConfig	1
-../Drivers/Src/stm32f446xx_spi_driver.c:252:6:SPI_IRQPriorityConfig	1
-../Drivers/Src/stm32f446xx_spi_driver.c:267:6:SPI_IRQHandling	1
-../Drivers/Src/stm32f446xx_spi_driver.c:283:9:SPI_GetFlagStatus	2
-../Drivers/Src/stm32f446xx_spi_driver.c:305:6:SPI_PeripheralControl	2
-../Drivers/Src/stm32f446xx_spi_driver.c:328:6:SPI_SSIConfig	2
-../Drivers/Src/stm32f446xx_spi_driver.c:351:6:SPI_SSOEConfig	2
+../Drivers/Src/stm32f446xx_spi_driver.c:236:6:SPI_IRQInterruptConfig	12
+../Drivers/Src/stm32f446xx_spi_driver.c:288:6:SPI_IRQPriorityConfig	1
+../Drivers/Src/stm32f446xx_spi_driver.c:307:6:SPI_IRQHandling	1
+../Drivers/Src/stm32f446xx_spi_driver.c:323:9:SPI_GetFlagStatus	2
+../Drivers/Src/stm32f446xx_spi_driver.c:345:6:SPI_PeripheralControl	2
+../Drivers/Src/stm32f446xx_spi_driver.c:368:6:SPI_SSIConfig	2
+../Drivers/Src/stm32f446xx_spi_driver.c:391:6:SPI_SSOEConfig	2
