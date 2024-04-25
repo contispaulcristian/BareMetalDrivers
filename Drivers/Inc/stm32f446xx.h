@@ -350,6 +350,8 @@ typedef struct
 #define IRQ_NO_EXTI9_5						23
 #define IRQ_NO_EXTI15_10					40
 
+#define IRQ_NO_SPI2							36
+
 /*
  * macros for all the possible priority levels
  */
